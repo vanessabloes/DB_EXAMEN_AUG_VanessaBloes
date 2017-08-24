@@ -1,0 +1,23 @@
+
+UNF: niet, genormaliseerde vorm, alle gegevens groeperen in een entiteit
+
+	DB(Personeelsnummer, Personeelsnaam, Geboortedatum, LaboCode, LaboNaam, ProjectCode, ProjectOmschrijving, ProjectSupervisor)
+
+1NF: elk attribuut is atomair, geen enkel attribuut wordt herhaald, afzonderlijke entiteit per groep gegevens die bij elkaar horen, kandidaatsleutels aanduiden
+
+	Laborant(Personeelsnummer, Personeelsnaam, Geboortedatum)
+	Labo (LaboCode, LaboNaam)
+	Project(Employee Number, Project Code, Project Description, Project Supervisor)
+
+2NF: alle niet-sleutel attributen zijn volledig functioneel afhankelijk van de primaire sleutel
+
+	Laborant(Personeelsnummer, Personeelsnaam, Geboortedatum, LaboCode, LaboNaam)
+	Laborant_project(Personeelsnummer,ProjectCode)
+	Project(ProjectCode, ProjectOmschrijving,ProjectSupervisor)
+
+3NF: alle attributen die niet tot een sleutel behoren, hangen niet af van een niet-sleutel attribuut
+
+	LaborantPersoneelsnummer, Personeelsnaam, Geboortedatum, LaboCode)
+	Labo (LaboCode, LaboNaam)
+	Laborant_project(Personeelsnummer, ProjectCode)
+	Project(ProjectCode, ProjectOmschrijving, ProjectSupervisor)
