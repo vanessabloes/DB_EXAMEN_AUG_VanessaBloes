@@ -1,0 +1,4 @@
+db.bioing_mongo_exam.aggregate([{$group : {_id:"$drug", "percentage_of_side_effects": {$gt:8}}}]);
+
+db.bioing_mongo_exam.aggregate([{$group : {_id:"company", avg_percentage_of_side_effects: {$avg: "$percentage_of_side_effects"}}},{$match: {avg_percentage_of_side_effects: {$gt:10}}}]);
+
