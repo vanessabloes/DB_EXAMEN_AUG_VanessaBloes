@@ -1,0 +1,17 @@
+mysql> select gene_name, (seq_region_end - seq_region_start + 1) as len from gene order by len desc limit 1;
++-----------+---------+
+| gene_name | len     |
++-----------+---------+
+| TMPRSS3   | 5379014 |
++-----------+---------+
+1 row in set (0.02 sec)
+
+mysql> select gene_name, count(transcript_id) from transcript join gene on transcript.gene_id = gene.gene_id group by gene_name order by count(transcript_id) desc limit 1;
++-----------+----------------------+
+| gene_name | count(transcript_id) |
++-----------+----------------------+
+| U6        |                 1329 |
++-----------+----------------------+
+1 row in set (0.23 sec)
+
+
