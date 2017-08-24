@@ -1,0 +1,1 @@
+curl 'http://rest.ensembl.org/sequence/region/zebrafish/MYCN:1..100?' -H 'Content-type:text/x-fasta'
